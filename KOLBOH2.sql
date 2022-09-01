@@ -2,7 +2,7 @@
 
 
 
-/* הכנת טבלת Product */
+/* ֳ₪ֳ«ֳ°ֳ÷ ֳ¨ֳ¡ֳ¬ֳ÷ Product */
 
 insert into Product
 values (1111 ,'Bisli' ,7.9) ,
@@ -17,7 +17,7 @@ values (1111 ,'Bisli' ,7.9) ,
 (1110 ,'Milk' ,7.9)
 
 
-/* הכנת טבלת Worker */
+/* ֳ₪ֳ«ֳ°ֳ÷ ֳ¨ֳ¡ֳ¬ֳ÷ Worker */
 
 insert into Worker
 values (2222 ,'Shimon') ,
@@ -30,7 +30,7 @@ values (2222 ,'Shimon') ,
 (11111 ,'Aaron the boss') 
 
 
-/* הכנת טבלת Orders */
+/* ֳ₪ֳ«ֳ°ֳ÷ ֳ¨ֳ¡ֳ¬ֳ÷ Orders */
 
 insert into Orders
 values (01 ,1111 ,2222 ,7) ,
@@ -45,18 +45,17 @@ values (01 ,1111 ,2222 ,7) ,
 (10 ,1110 ,5555,120) 
 
 
-/* הצגת רשימת מוצרים בסדר יורד */
+/* ֳ₪ֳ¶ֳ¢ֳ÷ ֳ¸ֳ¹ֳ©ֳ®ֳ÷ ֳ®ֳ¥ֳ¶ֳ¸ֳ©ֳ­ ֳ¡ֳ±ֳ£ֳ¸ ֳ©ֳ¥ֳ¸ֳ£ */
 
-SELECT Name
-FROM Product
-ORDER BY Name DESC
+SELECTֲ DISTINCT Name
+FROMֲ Product
 
-/* הצגת רשימת מוצרים בסדר עולה */
-SELECT Name
-FROM Product
+/* ֳ₪ֳ¶ֳ¢ֳ÷ ֳ¸ֳ¹ֳ©ֳ®ֳ÷ ֳ®ֳ¥ֳ¶ֳ¸ֳ©ֳ­ ֳ¡ֳ±ֳ£ֳ¸ ֳ²ֳ¥ֳ¬ֳ₪ */
+SELECTֲ Name
+FROMֲ Product
 GROUP BY Name 
 
-/*  מציג רשימת מוצרים ומחיר ואת המחיר הגדול מ-50 */
+/*  ֳ®ֳ¶ֳ©ֳ¢ ֳ¸ֳ¹ֳ©ֳ®ֳ÷ ֳ®ֳ¥ֳ¶ֳ¸ֳ©ֳ­ ֳ¥ֳ®ֳ§ֳ©ֳ¸ ֳ¥ֳ ֳ÷ ֳ₪ֳ®ֳ§ֳ©ֳ¸ ֳ₪ֳ¢ֳ£ֳ¥ֳ¬ ֳ®-50 */
 
 select Product.NAME,Product.Price
 from Product
@@ -64,30 +63,30 @@ where Price > 50
 
 
 
-/* רשימת מוצרים + מחירים + עמודה לאחר התייקרות ב-20% */
+/* ֳ¸ֳ¹ֳ©ֳ®ֳ÷ ֳ®ֳ¥ֳ¶ֳ¸ֳ©ֳ­ + ֳ®ֳ§ֳ©ֳ¸ֳ©ֳ­ + ֳ²ֳ®ֳ¥ֳ£ֳ₪ ֳ¬ֳ ֳ§ֳ¸ ֳ₪ֳ÷ֳ©ֳ©ֳ·ֳ¸ֳ¥ֳ÷ ֳ¡-20% */
 select name ,Price ,  Price * 1.2 [With new update price of 20%]
 from Product
 
 
-/* רשימת כל העובדים לפי סדר יורד */
+/* ֳ¸ֳ¹ֳ©ֳ®ֳ÷ ֳ«ֳ¬ ֳ₪ֳ²ֳ¥ֳ¡ֳ£ֳ©ֳ­ ֳ¬ֳ´ֳ© ֳ±ֳ£ֳ¸ ֳ©ֳ¥ֳ¸ֳ£ */
 select DISTINCT name
 from Worker
 
 
-/* רשימת כל העובדים לפי סדר עולה */
-select name
-from Worker
-order by name desc
+/* ֳ¸ֳ¹ֳ©ֳ®ֳ÷ ֳ«ֳ¬ ֳ₪ֳ²ֳ¥ֳ¡ֳ£ֳ©ֳ­ ֳ¬ֳ´ֳ© ֳ±ֳ£ֳ¸ ֳ²ֳ¥ֳ¬ֳ₪ */
+selectֲ name
+fromֲ Worker
+order byֲ name desc
 
-/*רשימת הזמנות, כאשר כמות המוצרים גדולה מ-10
-   מציג רק 3 המובילים */
+/*ֳ¸ֳ¹ֳ©ֳ®ֳ÷ ֳ₪ֳ¦ֳ®ֳ°ֳ¥ֳ÷, ֳ«ֳ ֳ¹ֳ¸ ֳ«ֳ®ֳ¥ֳ÷ ֳ₪ֳ®ֳ¥ֳ¶ֳ¸ֳ©ֳ­ ֳ¢ֳ£ֳ¥ֳ¬ֳ₪ ֳ®-10
+   ֳ®ֳ¶ֳ©ֳ¢ ֳ¸ֳ· 3 ֳ₪ֳ®ֳ¥ֳ¡ֳ©ֳ¬ֳ©ֳ­ */
 
 select TOP 3 QUANTITY
 from Orders
 where QUANTITY > 10
-order by QUANTITY desc
+order byֲ QUANTITY desc
 
 
-/* יש לעדכן את כל ההזמנות שעובד מס' 3 טיפל - לשנות כמות ההזמנה ל-10 */
+/* ֳ©ֳ¹ ֳ¬ֳ²ֳ£ֳ«ֳ¯ ֳ ֳ÷ ֳ«ֳ¬ ֳ₪ֳ₪ֳ¦ֳ®ֳ°ֳ¥ֳ÷ ֳ¹ֳ²ֳ¥ֳ¡ֳ£ ֳ®ֳ±' 3 ֳ¨ֳ©ֳ´ֳ¬ - ֳ¬ֳ¹ֳ°ֳ¥ֳ÷ ֳ«ֳ®ֳ¥ֳ÷ ֳ₪ֳ₪ֳ¦ֳ®ֳ°ֳ₪ ֳ¬-10 */
 Update Orders set QUANTITY = 10
 where ID_W = '4444'
